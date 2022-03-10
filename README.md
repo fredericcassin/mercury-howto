@@ -16,7 +16,7 @@ How-to install and use the Mercury language on Linux and Windows
   tar xvzf mercury-srcdist-20.06.1.tar.gz  
   cd mercury-srcdist-20.06.1  
   ./configure  
-  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc. 
+  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc.  
   make | tee make.log  
   sudo make install | tee make_install.log  
 

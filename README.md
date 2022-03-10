@@ -23,14 +23,16 @@ How-to install and use the Mercury language on Linux and Windows
 ### Minimal bootstrap: Compile the mercury minimal necessary to recompile with mercury
 
   ./configure --enable-minimal-install  
-  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc.  
+  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc.  4 works fine
   make | tee make.log  
   sudo make install | tee make_install.log  
 
 ### Complete distribution bootstrap: Compile with mercury the complete distribution
 
-  ./configure --enable-minimal-install  
-  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc.  
+  make realclean  
+  ./prepare.sh  
+  ./configure  
+  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc. 4 works fine  
   make | tee make.log  
   sudo make install | tee make_install.log  
 

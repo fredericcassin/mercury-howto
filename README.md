@@ -19,5 +19,5 @@ How-to install and use the Mercury language on Linux and Windows
   sudo make install | tee make_install.log  
 
   echo "MANDATORY_MANPATH /usr/local/mercury-20.06.1/share/man" >> ~/.manpath  
-  echo "export PATH=\"/usr/local/mercury-20.06.1/bin:$PATH\"" >> ~/.bashrc  
-  echo "export INFOPATH=\"/usr/local/mercury-20.06.1/share/info:$INFOPATH\"" >> ~/.bashrc  
+  echo "export PATH=\\"/usr/local/mercury-20.06.1/bin:$PATH\\"" >> ~/.bashrc  
+  echo "export INFOPATH=\\"/usr/local/mercury-20.06.1/share/info:$INFOPATH\\"" >> ~/.bashrc  

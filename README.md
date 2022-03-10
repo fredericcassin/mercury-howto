@@ -45,3 +45,7 @@ How-to install and use the Mercury language on Linux and Windows
                 "/usr/local/mercury-20.06.1/lib/mercury/elisp")  
         (autoload 'mdb "gud" "Invoke the Mercury debugger" t)  
   EOF
+
+### (optional) Uninstallation
+
+  rm -rf /usr/local/mercury-20.06.1' to uninstall  

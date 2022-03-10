@@ -4,6 +4,7 @@ How-to install and use the Mercury language on Linux and Windows
 ## Installation in WSL / Debian
 
 Steps:
+
   sudo apt update
   sudo apt update --all
   sudo apt install git

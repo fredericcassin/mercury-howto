@@ -17,7 +17,7 @@ How-to install and use the Mercury language on Linux and Windows
 
 ### Install Java
 
-  sudo apt install -y default-jdk  
+  sudo apt-get install -y default-jdk  
   
 ### Install .NET
 

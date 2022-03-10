@@ -5,9 +5,9 @@ How-to install and use the Mercury language on Linux and Windows
 
 Steps:
 
-  sudo apt update
-  sudo apt update --all
-  sudo apt install git
+  sudo apt update  
+  sudo apt update --all  
+  sudo apt install git  
   sudo apt-get install gcc-mingw-w64
   sudo apt-get install texinfo
   wget http://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz

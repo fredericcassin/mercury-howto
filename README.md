@@ -8,7 +8,7 @@ How-to install and use the Mercury language on Linux and Windows
 ### Prerequisites
 
   sudo apt update  
-  sudo apt update --all  
+  sudo apt upgrade  
   sudo apt install git  
   sudo apt-get install gcc-mingw-w64  
   sudo apt-get install texinfo texlive  

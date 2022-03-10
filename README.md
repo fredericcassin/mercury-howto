@@ -20,6 +20,19 @@ How-to install and use the Mercury language on Linux and Windows
   tar xvzf mercury-srcdist-20.06.1.tar.gz  
   cd mercury-srcdist-20.06.1  
 
+### Install Java
+
+  sudo apt install -y default-jdk  
+  
+### Install .NET
+
+  wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
+  sudo dpkg -i packages-microsoft-prod.deb  
+  rm packages-microsoft-prod.deb  
+  sudo apt-get update  
+  sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
+  
+
 ### Minimal bootstrap: Compile the mercury minimal necessary to recompile with mercury
 
   ./configure --enable-minimal-install  

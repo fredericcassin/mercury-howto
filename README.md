@@ -48,4 +48,4 @@ How-to install and use the Mercury language on Linux and Windows
 
 ### (optional) Uninstallation
 
-  rm -rf /usr/local/mercury-20.06.1' to uninstall  
+  rm -rf /usr/local/mercury-20.06.1  

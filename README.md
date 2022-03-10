@@ -14,12 +14,6 @@ How-to install and use the Mercury language on Linux and Windows
   sudo apt-get install texinfo texlive  
   sudo apt-get install emacs apache2  
 
-### Install sources
-
-  wget http://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz  
-  tar xvzf mercury-srcdist-20.06.1.tar.gz  
-  cd mercury-srcdist-20.06.1  
-
 ### Install Java
 
   sudo apt install -y default-jdk  
@@ -32,6 +26,11 @@ How-to install and use the Mercury language on Linux and Windows
   sudo apt-get update  
   sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
   
+### Install sources
+
+  wget http://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz  
+  tar xvzf mercury-srcdist-20.06.1.tar.gz  
+  cd mercury-srcdist-20.06.1  
 
 ### Minimal bootstrap: Compile the mercury minimal necessary to recompile with mercury
 

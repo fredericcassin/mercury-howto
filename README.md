@@ -8,18 +8,23 @@ How-to install and use the Mercury language on Linux and Windows
 ### Prerequisites, + Java
 
   sudo apt-get update  
-  sudo apt-get upgrade  
-  sudo apt-get install -y git wget flex bison info gcc-mingw-w64 texinfo texlive emacs apache2 default-jdk  
+  sudo apt-get -y upgrade  
+  sudo apt-get install -y git wget flex bison info make automake gcc-mingw-w64 texinfo texlive emacs apache2 default-jdk  
 
 ### Install .NET
 
   wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
   sudo dpkg -i packages-microsoft-prod.deb  
   rm packages-microsoft-prod.deb  
-  sudo apt-get update  
+  sudo apt-get -y update  
   sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
+
+### Install sources from the repo
+
+  git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
+  cd mercury  
   
-### Install sources
+### (alternative) Install sources from the tar.gz
 
   wget http://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz  
   tar xvzf mercury-srcdist-20.06.1.tar.gz  

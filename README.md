@@ -9,7 +9,7 @@ How-to install and use the Mercury language on Linux and Windows
 
   sudo apt-get update  
   sudo apt-get upgrade  
-  sudo apt-get install git wget flex bison info gcc-mingw-w64 texinfo texlive emacs apache2  
+  sudo apt-get install -y git wget flex bison info gcc-mingw-w64 texinfo texlive emacs apache2  
 
 ### Install Java
 

@@ -23,6 +23,7 @@ How-to install and use the Mercury language on Linux and Windows
 
   git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
   cd mercury  
+  ./prepare.sh  
   
 ### (alternative) Install sources from the tar.gz
 
@@ -53,11 +54,12 @@ How-to install and use the Mercury language on Linux and Windows
   echo "export PATH=\\"/usr/local/mercury-20.06.1/bin:$PATH\\"" >> ~/.bashrc  
   echo "export INFOPATH=\\"/usr/local/mercury-20.06.1/share/info:$INFOPATH\\"" >> ~/.bashrc  
   sudo cp deep_profiler/mdprof_cgi /usr/lib/cgi-bin/  
-  tee -a ~/.emacs <<EOF  
+
+tee -a ~/.emacs <<EOF  
         (add-to-list 'load-path  
                 "/usr/local/mercury-20.06.1/lib/mercury/elisp")  
         (autoload 'mdb "gud" "Invoke the Mercury debugger" t)  
-  EOF
+EOF
 
 ### (optional) Uninstallation
 

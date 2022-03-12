@@ -45,8 +45,8 @@ How-to install and use the Mercury language on Linux and Windows
   ./prepare.sh  
   ./configure  
   \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc. 4 works fine  
-  make | tee make.log  
-  sudo make install | tee make_install.log  
+  make PARALLEL=-j4 | tee make.log  
+  sudo make PARALLEL=-j4 install | tee make_install.log  
 
 ### Finalize the installation
 

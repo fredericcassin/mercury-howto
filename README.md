@@ -40,7 +40,7 @@ tee -a ~/.emacs <<EOF
         (autoload 'mdb "gud" "Invoke the Mercury debugger" t)  
 EOF
 
-### Install sources from the repo
+### (Step 2) Install sources from the repo
 
   git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
   

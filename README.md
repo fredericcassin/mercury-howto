@@ -41,19 +41,24 @@ tee -a ~/.emacs <<EOF
 EOF
 
 ### (Step 2) Install sources from the repo
-
-  git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
+                      
+git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git
   
-### Install .NET and Java
+### (Not working, skip next: Install Java) Install .NET
 
 **Issue not resolved: the configure doesn't detect the .NET SDK:**  
   **checking for use of a Microsoft C compiler... no**
-
+  **TBD: test with README.CSharp instructions**
+  
   wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
   sudo dpkg -i packages-microsoft-prod.deb  
   rm packages-microsoft-prod.deb  
   sudo apt-get -y update  
-  sudo apt-get install -y default-jdk apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
+  sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
+
+### Install Java
+
+  sudo apt-get install -y default-jdk
 
 ### Complete distribution bootstrap: Compile with mercury the complete distribution
 

@@ -1,9 +1,11 @@
 # mercury-howto
-How-to install and use the Mercury language on Linux and Windows
+Document steps to install and use the Mercury language on Linux and Windows.
+Two steps are required
+
+1. install a minimal mmc compiler from a binary tar ball
+2. Reinstall from the git sources. This requires the first generated mmc to recompile all using Mercury itself.
 
 ## Installation in WSL / Debian
-
-**Steps:**
 
 ### Prerequisites, + Java
 
@@ -12,6 +14,8 @@ How-to install and use the Mercury language on Linux and Windows
   sudo apt-get install -y git wget flex bison info make automake gcc-mingw-w64 texinfo texlive emacs apache2 default-jdk  
 
 ### Install .NET
+
+** Issue not resolved: the configure doesn't detect the .NET SDK **
 
   wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
   sudo dpkg -i packages-microsoft-prod.deb  

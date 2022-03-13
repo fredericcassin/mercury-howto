@@ -11,25 +11,9 @@ Two steps are required
 
   sudo apt-get update  
   sudo apt-get -y upgrade  
-  sudo apt-get install -y git wget flex bison info make automake gcc-mingw-w64 texinfo texlive emacs apache2 default-jdk  
+  sudo apt-get install -y git wget flex bison info make automake gcc-mingw-w64 texinfo texlive emacs apache2  
 
-### Install .NET
-
-** Issue not resolved: the configure doesn't detect the .NET SDK **
-
-  wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
-  sudo dpkg -i packages-microsoft-prod.deb  
-  rm packages-microsoft-prod.deb  
-  sudo apt-get -y update  
-  sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
-
-### Install sources from the repo
-
-  git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
-  cd mercury  
-  ./prepare.sh  
-  
-### (alternative) Install sources from the tar.gz
+### (Step 1) Install sources from the tar.gz
 
   wget http://dl.mercurylang.org/release/mercury-srcdist-20.06.1.tar.gz  
   tar xvzf mercury-srcdist-20.06.1.tar.gz  
@@ -40,15 +24,6 @@ Two steps are required
 
   ./configure --enable-minimal-install  
   \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc.  4 works fine  
-  make PARALLEL=-j4 | tee make.log  
-  sudo make PARALLEL=-j4 install | tee make_install.log  
-
-### Complete distribution bootstrap: Compile with mercury the complete distribution
-
-  make realclean  
-  ./prepare.sh  
-  ./configure  
-  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc. 4 works fine  
   make PARALLEL=-j4 | tee make.log  
   sudo make PARALLEL=-j4 install | tee make_install.log  
 
@@ -64,6 +39,31 @@ tee -a ~/.emacs <<EOF
                 "/usr/local/mercury-20.06.1/lib/mercury/elisp")  
         (autoload 'mdb "gud" "Invoke the Mercury debugger" t)  
 EOF
+
+### Install sources from the repo
+
+  git clone --depth 1 --branch "version-20_06_1" https://github.com/Mercury-Language/mercury.git  
+  
+### Install .NET and Java
+
+**Issue not resolved: the configure doesn't detect the .NET SDK:**  
+  **checking for use of a Microsoft C compiler... no**
+
+  wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb  
+  sudo dpkg -i packages-microsoft-prod.deb  
+  rm packages-microsoft-prod.deb  
+  sudo apt-get -y update  
+  sudo apt-get install -y default-jdk apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-6.0  
+
+### Complete distribution bootstrap: Compile with mercury the complete distribution
+
+  cd mercury  
+  make realclean  
+  ./prepare.sh  
+  ./configure  
+  \# make PARALLEL=-j2 ... for parallel make with 2 jobs, 3 for 3 etc. 4 works fine  
+  make PARALLEL=-j4 | tee make.log  
+  sudo make PARALLEL=-j4 install | tee make_install.log  
 
 ### (optional) Uninstallation
 
